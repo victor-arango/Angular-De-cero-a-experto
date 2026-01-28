@@ -25,6 +25,12 @@ const song = 'New Song';
 const {song:anotherSong,songDurartion:duration, details} = audioPlayer;
 const { author } =details;
 
-console.log('Song : ', anotherSong);
-console.log('Duration : ', duration);
-console.log('Author : ', author);
+// console.log('Song : ', anotherSong);
+// console.log('Duration : ', duration);
+// console.log('Author : ', author);
+
+
+const [, , trunks = 'Not Found']: string[] = ["Goku", "Vegeta"];
+
+console.error("Personaje 3: " + trunks);
+
