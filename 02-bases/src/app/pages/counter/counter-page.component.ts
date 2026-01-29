@@ -1,5 +1,4 @@
-import { Numeric } from './../../../../node_modules/zod/v4/core/util.d';
-import { Component } from "@angular/core";
+import { Component, signal } from "@angular/core";
 
 
 
@@ -9,17 +8,16 @@ import { Component } from "@angular/core";
 })
 export class CounterPageComponent {
 counter =15;
+counterSignal = signal(10);
 
 incrementBy( value: number){
   this.counter += value;
-}
-
-decrementBy( value: number){
-  this.counter -= value;
+  this.counterSignal.update((current) => current + value);
 }
 
 resetCounter (){
-  this.counter = 10;
+  this.counter = 0;
+  this.counterSignal.set(0);
 }
 
 
